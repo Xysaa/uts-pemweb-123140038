@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import { FavoritesProvider } from "./context/FavoritesContext";
+import Header from "./components/Header";
 
-function App() {
-  const [count, setCount] = useState(0)
+import HomePage from "./pages/HomePage";
+import DetailPage from "./pages/DetailPage";
+import FavoritesPage from "./pages/FavoritesPage";
 
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <FavoritesProvider>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/art/:id" element={<DetailPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route
+          path="*"
+          element={
+            <div className="max-w-5xl mx-auto p-6">
+              <p>
+                Halaman tidak ditemukan.{" "}
+                <Link className="text-sky-600" to="/">
+                  Kembali
+                </Link>
+              </p>
+            </div>
+          }
+        />
+      </Routes>
+    </FavoritesProvider>
+  );
 }
-
-export default App
