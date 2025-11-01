@@ -1,13 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="id" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>uts_paw</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Basic SEO -->
+    <title>The Met — Museum Explorer</title>
+    <meta name="description" content="Aplikasi eksplorasi koleksi The Metropolitan Museum of Art: cari, filter, lihat detail, dan simpan favorit." />
+    <meta name="theme-color" content="#0ea5e9" />
+
+    <!-- Favicon (opsional, letakkan file di /public) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+
+    <!-- Font (opsional; gunakan sistem font agar ringan, atau tambahkan CDN font di sini) -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet"> -->
+
+    <!-- Preload App CSS (Vite akan meng-inject saat build) -->
   </head>
-  <body>
+  <body class="bg-white text-gray-800 antialiased dark:bg-gray-950 dark:text-gray-100">
+    <!-- Root mountpoint React -->
     <div id="root"></div>
+
+    <!-- Vite entry -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
